@@ -1,0 +1,10 @@
+
+services:
+  own-site:
+    image: srvgit.intosano.it:5050/intranet/dockerfiles/php8-laravel-10:1.1.2-prod-xdebug-20240909
+    container_name: own-site
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "9999:80"
+    restart: unless-stopped
