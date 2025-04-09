@@ -13,6 +13,50 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         >
         <style>
+            #game-container {
+                /* Change from fixed dimensions to max dimensions */
+                max-width: 1048px;
+                width: 100%; /* Allow it to shrink */
+                height: auto; /* Let height adjust automatically based on content/aspect ratio */
+                margin: 0 auto; /* Center the container */
+                position: relative; /* Needed for proper positioning */
+                animation: glow 2500ms ease-out infinite alternate;
+            }
+
+            @keyframes glow {
+                0% {
+                    box-shadow: 0.25rem 0.25rem 1rem #d87b04;
+                }	
+                100% {
+                    box-shadow: 0.25rem 0.25rem 7rem #7b2cbf;
+                }
+            }
+
+            /* Make sure the canvas inside game container is responsive too */
+            #game-container canvas {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+            }
+
+            /* Add media query for smaller screens */
+            @media (max-width: 768px) {
+                #game-container {
+                    max-width: 100%;
+                    box-shadow: none; /* Optional: simplify on mobile */
+                }
+                
+                @keyframes glow {
+                    0% {
+                        box-shadow: 0.125rem 0.125rem 0.5rem #d87b04;
+                    }	
+                    100% {
+                        box-shadow: 0.125rem 0.125rem 3.5rem #7b2cbf;
+                    }
+                }
+            }
+
             .btn-primary {
                 background-color: #9d4edd !important;
                 border-color: #9d4edd !important;
@@ -140,6 +184,19 @@
             </div>
         </section>
 
+        <!-- GAME SECTION -->
+        <section id="game-section" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">???</h2>
+                <p class="text-center text-muted mx-auto" style="max-width: 700px;">
+                    A short playable narrative about chasing your dreams!
+                </p>
+                <!-- The container for the Phaser (or Canvas) game -->
+                
+                <div id="game-container" class="m-auto mt-5 mb-4 text-center"></div>
+            </div>
+        </section>
+
         <!-- SOCIAL SECTION -->
         <section class="py-5">
             <div class="container text-center">
@@ -199,6 +256,11 @@
         <script 
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
         </script>
+        
+        <!-- Phaser CDN or local file -->
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+        <!-- game code -->
+        <script src="{{ asset('assets/js/game.js') }}"></script>
 
         <!-- THEME TOGGLE SCRIPT -->
         <script>
