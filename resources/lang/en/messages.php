@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'My Dev Portfolio',
+    'title' => 'M4lore',
     'greeting' => 'Hey, I\'m Lorenzo!',
     'subtitle' => 'also known as malore',
     'intro' => 'I’m a 21-year-old Italian developer, passionate about programming, gaming, 

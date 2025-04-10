@@ -260,7 +260,7 @@
         <!-- Phaser CDN or local file -->
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
         <!-- game code -->
-        <script src="{{ asset('assets/js/game.js') }}"></script>
+        <script type="module" src="assets/js/game.js"></script>
 
         <!-- THEME TOGGLE SCRIPT -->
         <script>

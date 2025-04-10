@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Il Mio Portfolio Dev',
+    'title' => 'M4lore',
     'greeting' => 'Ciao, sono Lorenzo!',
     'subtitle' => 'conosciuto anche come malore',
     'intro' => 'Sono uno sviluppatore italiano di 21 anni, appassionato di programmazione, gaming, 
